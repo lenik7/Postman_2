@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "06662143-f909-435b-96f0-f2a056c197fb",
+		"name": "film",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "21362041-06662143-f909-435b-96f0-f2a056c197fb"
+	},
+	"item": [
+		{
+			"name": "New Folder",
+			"item": [
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "012d2633-727e-4c78-9127-1909a68cb688",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.title).to.eql('A New Hope');\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "94e885c3-ec94-42f2-8882-af85321364d1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}films/8",
+							"host": [
+								"{{url}}films"
+							],
+							"path": [
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "0ae1f101-e226-4498-b232-984edb474f96"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0f37aa34-9a31-46c3-a611-e7c40f7be185",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a806d6a7-e4d5-40ae-888b-37fb3b8f4ae0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "bc30ea42-4ce2-4b7d-ae99-9e4328bcadef",
+			"key": "url",
+			"value": "https://swapi.dev/api/",
+			"type": "string"
+		}
+	]
+}
